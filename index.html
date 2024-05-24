@@ -46,17 +46,53 @@
 
         <div class="container pt-4">
             <div class="row">
-                <div class="col-8">
+                <div class="col-8 pe-5">
                     <h3>Richiesta Preventivo</h3>
                     <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
 
 
                     <!--form-->
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-semibold">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Inserisci il tuo nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="surname" class="form-label fw-semibold">Cognome</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Inserisci il tuo cognome"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label fw-semibold">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="work" class="form-label fw-semibold">Tipo di Lavoro</label>
+                        <select id="work" class="form-select" required>
+                            <option selected>Selezione il tipo di lavoro</option>
+                            <option value="1"> Backed Development</option>
+                            <option value="2">Frontend Development</option>
+                            <option value="3">Project Analysis</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="note" class="form-label fw-semibold">Note</label>
+                        <textarea class="form-control" id="note" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="promo" class="form-label fw-semibold">Codice Promozionale (opzionale)</label>
+                        <input type="text" class="form-control" id="promo">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="privacy" required>
+                        <label class="form-check-label" for="privacy">
+                            Accetto la Privacy Policy
+                        </label>
+                    </div>
 
-                    <!--/form-->
                 </div>
+                <!--/form-->
                 <!--card-->
-                <div class="card col-4 p-0" style="width: 18rem;">
+                <div class="card col-4 p-0" style="width: 18rem; height: 28rem;">
                     <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         class="card-img-top" alt="..." width="300px" height="200px">
                     <div class="card-body">
@@ -82,6 +118,10 @@
         <!--/calcolo preventivo-->
 
     </main>
+    <!--footer-->
+    <footer></footer>
+    <!--footer-->
+
 </body>
 
 </html>
