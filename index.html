@@ -44,7 +44,8 @@
     <!--/barra di navigazione-->
     <main>
 
-        <div class="container pt-4">
+
+        <div class="container pt-4 ">
             <div class="row">
                 <div class="col-8 pe-5">
                     <h3>Richiesta Preventivo</h3>
@@ -52,86 +53,89 @@
 
 
                     <!--form-->
-                    <div class="mb-3">
-                        <label for="name" class="form-label fw-semibold">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Inserisci il tuo nome" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="surname" class="form-label fw-semibold">Cognome</label>
-                        <input type="text" class="form-control" id="surname" placeholder="Inserisci il tuo cognome"
-                            required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputEmail" class="form-label fw-semibold">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="work" class="form-label fw-semibold">Tipo di Lavoro</label>
-                        <select id="work" class="form-select" required>
-                            <option selected>Selezione il tipo di lavoro</option>
-                            <option value="1"> Backed Development</option>
-                            <option value="2">Frontend Development</option>
-                            <option value="3">Project Analysis</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="note" class="form-label fw-semibold">Note</label>
-                        <textarea class="form-control" id="note" rows="3"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="promo" class="form-label fw-semibold">Codice Promozionale (opzionale)</label>
-                        <input type="text" class="form-control" id="promo">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="privacy" required>
-                        <label class="form-check-label fw-semibold" for="privacy">
-                            Accetto la Privacy Policy
-                        </label>
-                    </div>
-                    <!--/form-->
-
-                    <!--bottone submit-->
-                    <div class="row">
-                        <div class="container py-2 px-5 col-6 ">
-                            <button class="btn btn-primary  mt-4" type="submit" value="Submit">Calcola
-                                Preventivo</button>
-
+                    <form action="" id="form-preventivo">
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-semibold">Nome</label>
+                            <input type="text" class="form-control" id="name" placeholder="Inserisci il tuo nome"
+                                required>
                         </div>
+                        <div class="mb-3">
+                            <label for="surname" class="form-label fw-semibold">Cognome</label>
+                            <input type="text" class="form-control" id="surname" placeholder="Inserisci il tuo cognome"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label fw-semibold">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="work" class="form-label fw-semibold">Tipo di Lavoro</label>
+                            <select id="work" class="form-select" required>
+                                <option selected>Selezione il tipo di lavoro</option>
+                                <option value="1"> Backend Development</option>
+                                <option value="2">Frontend Development</option>
+                                <option value="3">Project Analysis</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="note" class="form-label fw-semibold">Note</label>
+                            <textarea class="form-control" id="note" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="promo" class="form-label fw-semibold">Codice Promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="promo">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="privacy" required>
+                            <label class="form-check-label fw-semibold" for="privacy">
+                                Accetto la Privacy Policy
+                            </label>
+                        </div>
+
+
                         <!--bottone submit-->
+                        <div class="row">
+                            <div class="container p-4 col-md-6 col-sm-12 ">
+                                <button class="btn btn-primary  mt-4" type="submit" value="Submit" id="submit">Calcola
+                                    Preventivo</button>
 
-                        <!--calcolo preventivo segnaposto-->
-                        <div class="container col-6 mt-4 ">
-                            <h5 class="fw-bold">Prezzo finale</h5>
-                            <p class="fw-bold fs-3">&euro; 200</p>
-                        </div>
-                    </div>
-                    <!--/calcolo preventivo segnaposto-->
-
-                </div>
-
-
-
-
-                <!--card-->
-                <div class="card col-4 p-0" style="width: 18rem; height: 28rem;">
-                    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        class="card-img-top" alt="..." width="300px" height="200px">
-                    <div class="card-body">
-                        <h5 class="card-title">I nostri contatti</h5>
-                        <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">help@boolfactory.test</li>
-                        <li class="list-group-item">+1122334455</li>
-
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Help desk</a>
-
+                            </div>
+                            <!--bottone submit-->
+                    </form>
+                    <!--/form-->
+                    <!--calcolo preventivo segnaposto-->
+                    <div class="container col-md-6 col-sm-12  p-5 ">
+                        <h5 class="fw-bold">Prezzo finale</h5>
+                        <p class="fw-bold fs-3">&euro; 200</p>
                     </div>
                 </div>
-                <!--/card-->
+                <!--/calcolo preventivo segnaposto-->
+
             </div>
+
+
+
+
+            <!--card-->
+            <div class="card col-4 p-0" style="width: 18rem; height: 28rem;">
+                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class="card-img-top" alt="..." width="300px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">I nostri contatti</h5>
+                    <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">help@boolfactory.test</li>
+                    <li class="list-group-item">+1122334455</li>
+
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Help desk</a>
+
+                </div>
+            </div>
+            <!--/card-->
+        </div>
         </div>
 
 
@@ -146,7 +150,9 @@
     </footer>
     <!--footer-->
 
-
+    <!--collegamento JavaScript-->
+    <script src="main.js"></script>
+    <!--collegamento JavaScript-->
 </body>
 
 </html>
