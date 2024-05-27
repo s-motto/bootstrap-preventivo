@@ -72,9 +72,9 @@
                             <label for="work" class="form-label fw-semibold">Tipo di Lavoro</label>
                             <select id="work" class="form-select" required>
                                 <option selected>Selezione il tipo di lavoro</option>
-                                <option value="1"> Backend Development</option>
-                                <option value="2">Frontend Development</option>
-                                <option value="3">Project Analysis</option>
+                                <option value="1" id="be"> Backend Development</option>
+                                <option value="2" id="fe">Frontend Development</option>
+                                <option value="3" id="pa">Project Analysis</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -104,9 +104,9 @@
                     </form>
                     <!--/form-->
                     <!--calcolo preventivo segnaposto-->
-                    <div class="container col-md-6 col-sm-12  p-5 ">
+                    <div class="container col-md-6 col-sm-12  p-5 d-none" id="prezzo-finale">
                         <h5 class="fw-bold">Prezzo finale</h5>
-                        <p class="fw-bold fs-3">&euro; 200</p>
+                        <p class="fw-bold fs-3">&euro; <span id="prezzo"></span></p>
                     </div>
                 </div>
                 <!--/calcolo preventivo segnaposto-->
