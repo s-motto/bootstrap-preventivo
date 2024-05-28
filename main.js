@@ -17,7 +17,7 @@ datiPreventivo.addEventListener('submit', function (event) {
     const lavoro = document.getElementById('work').value;
     sceltaLavoro = Number(lavoro);
     //console.log(sceltaLavoro);
-
+    console.log(codicePromo);
     //tariffe orarie
     const tariffaBackend = 20.5;
     const tariffaFrontend = 15.3;
@@ -37,11 +37,7 @@ datiPreventivo.addEventListener('submit', function (event) {
 
     //codici promozionali
     const scontoPromo = 0.25;
-    const promoUno = 'YHDNU32';
-    const promoDue = 'JANJC63';
-    const promoTre = 'PWKCN25';
-    const promoQuattro = 'SJDPO96';
-    const promoCinque = 'POCIE24';
+    const promoAttiva = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
     //totale preventivo
     let preventivo = '';
@@ -53,24 +49,12 @@ datiPreventivo.addEventListener('submit', function (event) {
         preventivo = totaleProjAnalysis;
     };
     //check promozioni
-    if (codicePromo === promoUno) {
+    if (promoAttiva.includes(codicePromo)) {
         preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
-    } else if (codicePromo === promoDue) {
-        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
-    } else if (codicePromo === promoTre) {
-        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
-    } else if (codicePromo === promoQuattro) {
-        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
-    } else if (codicePromo === promoCinque) {
-        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
-    } else {
-        alert("Il codice promozionale inserito non è valido")
     };
-
 
     document.getElementById('prezzo').innerText = `${preventivo}`;
     document.getElementById('prezzo-finale').classList.toggle('d-none');
-    // promoAttiva = codicePromo;
 
 
 
