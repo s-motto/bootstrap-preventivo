@@ -51,6 +51,10 @@ datiPreventivo.addEventListener('submit', function (event) {
     //check promozioni
     if (promoAttiva.includes(codicePromo)) {
         preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2)
+    } else if (codicePromo === '') {
+        console.log(preventivo);
+    } else {
+        alert('Il codice promozionale inserito non è valido');
     };
 
     //divisione del totale in due variabili
