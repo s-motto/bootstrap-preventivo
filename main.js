@@ -9,7 +9,6 @@ datiPreventivo.addEventListener('submit', function (event) {
     //raccolta dati
 
     let datiUtente = [];
-    //let promoAttiva = '';
     let sceltaLavoro = '';
     const nomeUtente = document.getElementById('name').value;
     const cognomeUtente = document.getElementById('surname').value;
@@ -17,7 +16,7 @@ datiPreventivo.addEventListener('submit', function (event) {
     const codicePromo = document.getElementById('promo').value;
     const lavoro = document.getElementById('work').value;
     sceltaLavoro = Number(lavoro);
-    console.log(sceltaLavoro);
+    //console.log(sceltaLavoro);
 
     //tariffe orarie
     const tariffaBackend = 20.5;
@@ -25,13 +24,13 @@ datiPreventivo.addEventListener('submit', function (event) {
     const tariffaProjectAnalysis = 33.6;
     const monteOrario = 10;
 
-
+    //funzione costo lavoro
     function tariffa(num1, num2) {
         let totale = num1 * num2;
         return totale
     };
 
-    //totali
+    //calcolo preventivo
     const totaleBackEnd = tariffa(tariffaBackend, monteOrario);
     const totaleFrontEnd = tariffa(tariffaFrontend, monteOrario);
     const totaleProjAnalysis = tariffa(tariffaProjectAnalysis, monteOrario);
@@ -44,8 +43,8 @@ datiPreventivo.addEventListener('submit', function (event) {
     const promoQuattro = 'SJDPO96';
     const promoCinque = 'POCIE24';
 
+    //totale preventivo
     let preventivo = '';
-
     if (sceltaLavoro == '1') {
         preventivo = totaleBackEnd;
     } else if (sceltaLavoro == '2') {
@@ -53,10 +52,20 @@ datiPreventivo.addEventListener('submit', function (event) {
     } else if (sceltaLavoro == '3') {
         preventivo = totaleProjAnalysis;
     };
-
-    if (codicePromo === promoUno || promoDue || promoTre || promoQuattro || promoCinque) {
+    //check promozioni
+    if (codicePromo === promoUno) {
         preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
-    }
+    } else if (codicePromo === promoDue) {
+        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
+    } else if (codicePromo === promoTre) {
+        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
+    } else if (codicePromo === promoQuattro) {
+        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
+    } else if (codicePromo === promoCinque) {
+        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
+    } else {
+        alert("Il codice promozionale inserito non è valido")
+    };
 
 
     document.getElementById('prezzo').innerText = `${preventivo}`;
