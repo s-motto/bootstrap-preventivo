@@ -42,18 +42,29 @@ datiPreventivo.addEventListener('submit', function (event) {
     //totale preventivo
     let preventivo = '';
     if (sceltaLavoro == '1') {
-        preventivo = totaleBackEnd;
+        preventivo = totaleBackEnd.toFixed(2);
     } else if (sceltaLavoro == '2') {
-        preventivo = totaleFrontEnd;
+        preventivo = totaleFrontEnd.toFixed(2);
     } else if (sceltaLavoro == '3') {
-        preventivo = totaleProjAnalysis;
+        preventivo = totaleProjAnalysis.toFixed(2);
     };
     //check promozioni
     if (promoAttiva.includes(codicePromo)) {
-        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2);
+        preventivo = Number(preventivo - (preventivo * scontoPromo)).toFixed(2)
     };
 
-    document.getElementById('prezzo').innerText = `${preventivo}`;
+    //divisione del totale in due variabili
+    let numeroIntero = Math.trunc(preventivo);
+    let decimale = Number((preventivo - numeroIntero).toFixed(2)) * 100;
+    let dec = '';
+    if (decimale == '0') {
+        dec = '00';
+    } else {
+        dec = decimale;
+    };
+
+    document.getElementById('prezzo').innerText = `${numeroIntero}`;
+    document.getElementById('dec').innerText = `${dec}`;
     document.getElementById('prezzo-finale').classList.toggle('d-none');
 
 
