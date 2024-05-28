@@ -18,6 +18,7 @@ datiPreventivo.addEventListener('submit', function (event) {
     sceltaLavoro = Number(lavoro);
     //console.log(sceltaLavoro);
     console.log(codicePromo);
+
     //tariffe orarie
     const tariffaBackend = 20.5;
     const tariffaFrontend = 15.3;
